@@ -1,3 +1,5 @@
+#Welcome to The Boredless Tourist, an online application giving you the power to find the parts of the city that fit the pace of your life. We at The Boredless Tourist run a recommendation engine using Python. We first evaluate what a person’s interests are and then give them recommendations in their area to venues, restaurants, and historical destinations that we think they’ll be engaged by. Let’s get started!
+
 #list of possible destinations
 destinations=["Paris, France", "Shanghai, China", "Los Angeles, USA", "São Paulo, Brazil", "Cairo, Egypt",]
 
@@ -16,4 +18,12 @@ def get_traveler_location(traveler):
 
 test_destination_index= get_traveler_location(test_traveler)
 
-print(test_destination_index)
+attractions = [[] for index in destinations]
+
+print(attractions)
+
+def add_attraction(destination, attraction):
+    try:
+        destination_index= get_destination_index(destination)
+    except ValueError:
+        return
