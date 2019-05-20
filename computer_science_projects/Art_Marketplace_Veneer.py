@@ -26,6 +26,20 @@ class Marketplace():
         for i in self.listings:
             print(i)
 
+class Client():
+    def __init__(self, name, location, is_museum):
+        self.name=name
+        self.location=location
+        if self.location=='Private Collector':
+            self.is_museum=False
+        else:
+            self.is_musem=True
+
+edytta= Client('Edytta', 'Private Collector', False)
+
+print(edytta)
+        
+
 
 girl_with_mandolin= Art("Picasso, Pablo", 'Girl with a Mandolin (Fanny Tellier)', 'oil on canvas', 1910)
 
