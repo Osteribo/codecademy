@@ -8,13 +8,25 @@ class TreeNode:
         self.choices = []
 
     def add_child(self, node):
-        print('\nAdding child node......')
+        #print('\nAdding child node......')
         self.choices = []
         self.choices += [node]
 
     def traverse(self):
         story_node = self
         print(story_root.story_pice)
+        while story_node.choices != []:
+            user_choice = input('What is your choice? 1 or 2? \n ')
+            if user_choice not in ["1", "2"]:
+                 print('choice is invalid. Try agian. ')
+                 print(user_choice)
+            else:
+                chosen_index = int(user_choice)
+                
+                chosen_child = story_node.choices[chosen_index-1]
+                print(chosen_child.story_pice)
+                story_node=chosen_child
+
 
 
 ######
