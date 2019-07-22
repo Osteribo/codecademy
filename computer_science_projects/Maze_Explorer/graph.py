@@ -19,8 +19,23 @@ class Graph:
     print("\nStarting off at the {0}\n".format(current_room))
     while current_room is not 'treasure room':
         node = self.graph_dict[current_room]
-        for items in node:
-            
+        for connected_room, weight in node.edges.items():
+            key = connected_room[:1]
+            print( 'enter {0} for {1}: {2} cost'.format(key, connected_room, weight ))
+        valid_choices=  [room[:1] for room in node.edges.keys()]
+        print('you have accumulated: {0} cost'.format(path_total))
+        choice = input("\nWhich room do you move to? ")
+        if choice not in valid_choices:
+            print("please select from these letters: {0}".format(valid_choices))
+        else:
+            for room in node.edges.keys():
+                if room.startswith(choice):
+                    current_room = room
+                    path_total += node.edges[room]
+                print("\n*** You have chosen: {0} ***\n".format(current_room))
+            print("Made it to the treasure room with {0} cost".format(path_total))
+
+
   
   def print_map(self):
     print("\nMAZE LAYOUT\n")
