@@ -32,7 +32,7 @@ class Graph:
                 if room.startswith(choice):
                     current_room = room
                     path_total += node.edges[room]
-                print("\n*** You have chosen: {0} ***\n".format(current_room))
+            print("\n*** You have chosen: {0} ***\n".format(current_room))
             print("Made it to the treasure room with {0} cost".format(path_total))
 
 
